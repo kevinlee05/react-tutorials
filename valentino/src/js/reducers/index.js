@@ -11,8 +11,13 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ARTICLE:
-            state.articles.push(action.payload);
-            return state;
+            return {
+                ...state,
+                articles: [...state.articles, action.payload ]
+            };
+            // two key points for avoiding mutations in Redux:
+            // Using concat(), slice(), and …spread for arrays
+            // Using Object.assign() and …spread for objects
         default:
             return state;
     }
