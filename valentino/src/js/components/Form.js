@@ -39,7 +39,7 @@ class ConnectedForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="title">Title</label>
+                    <label htmlFor="title">Title: </label>
                     <input
                         type="text"
                         className="form-control"
@@ -51,12 +51,13 @@ class ConnectedForm extends Component {
                 <button type="submit" className="btn btn-success btn-lg">
                     SAVE
                 </button>
+
             </form>
         );
     }
 }
 
-
-const Form = connect(null, mampDispatchToProps)(ConnectedForm);
+//the first argument for connect must be null when mapStateToProps is absent. Otherwise you’ll get TypeError: dispatch is not a function
+const Form = connect(null, mapDispatchToProps)(ConnectedForm);
 
 export default Form;
