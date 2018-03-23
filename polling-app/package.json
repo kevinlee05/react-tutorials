@@ -2,8 +2,10 @@
   "name": "polling-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app-server.js",
   "scripts": {
+    "prestart": "webpack --mode development",
+    "start": "node app-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
