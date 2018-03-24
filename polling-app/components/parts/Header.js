@@ -6,7 +6,14 @@ class Header extends Component {
     render(){
         return(
             <header>
-                <h1>{this.props.title}</h1>
+                <div>
+                <span>
+                    <h1 id="title"> {this.props.title} </h1>
+                    {this.props.status == 'connected' ?
+                        <div id="green_circle"></div> :
+                        <div id="red_circle"></div> }
+                </span>
+                </div>
             </header>
         );
     }
