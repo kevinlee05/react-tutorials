@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import io from 'socket.io-client';
+import Header from './parts/Header';
 
 class App extends Component {
 
@@ -20,8 +21,7 @@ class App extends Component {
     render(){ //ES6 shorthand for render = function()
         return (
             <div>
-                <h1>Hello World from React</h1>
-                <p>{this.socket.id}</p>
+                <Header title="New Header" />
             </div>
         );
     }
