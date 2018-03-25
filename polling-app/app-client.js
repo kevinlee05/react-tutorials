@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.js';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import App from './components/App';
+import Main from './components/Main';
+
 
 ReactDOM.render(
-    <App/>, document.getElementById('react-container')
+    (<Router basename="/">
+        <App />
+    </Router>),
+    document.getElementById('react-container')
 );
+

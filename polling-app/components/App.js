@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import io from 'socket.io-client';
 import Header from './parts/Header';
+import Main from './Main'
+import Links from './Links'
 
 class App extends Component {
 
@@ -39,6 +43,8 @@ class App extends Component {
         return (
             <div>
                 <Header title={this.state.title} status={this.state.status} />
+                <Links />
+                <Main />
             </div>
         );
     }
