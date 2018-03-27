@@ -2,16 +2,21 @@ import React from 'react';
 import Audience from './Audience';
 import Speaker from './Speaker';
 import Board from './Board';
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 class Main extends React.Component{
+    constructor(props) {
+        super(props);
+        console.log(this.props)
+
+    }
 
     render(){
         return(
             <Switch>
-                <Route exact path="/" name="audience" component={Audience} />
-                <Route path="/speaker" name="speaker" component={Speaker} />
-                <Route path="/board" name="board" component={Board} />
+                <Route exact path="/" render={(props)=> <Audience {...props} />} />
+                <Route path="/speaker"  component={Speaker} />
+                <Route path="/board"  component={Board} />
             </Switch>
         )
     }

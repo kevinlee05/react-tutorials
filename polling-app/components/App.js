@@ -44,7 +44,7 @@ class App extends Component {
             <div>
                 <Header title={this.state.title} status={this.state.status} />
                 <Links />
-                <Main />
+                <Main title={this.state.title} status={this.state.status}/>
             </div>
         );
     }
